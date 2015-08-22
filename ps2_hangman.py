@@ -54,35 +54,46 @@ def getdisplayWord(word):
 
     display = ""
     for i in range (0, len(word)):
-        display += "_ "
+        display += "-"
     return display
 
 
-##def hangman():
+def hangman():
 
-answer = choose_word(wordlist).lower()
-##    guessed_letters = []
-##    guess_left = 10
-displayed_word = getdisplayWord(answer)
+    answer = choose_word(wordlist).lower()
+    guessed_letters = []
+    guess_left = 10
+    guessed_word = getdisplayWord(answer)
 
-print "I am thinking of a word that is %d letters long" %(len(answer))
 
-print answer
-print displayed_word 
 
-##    while guess_left !== 0 and guessed_word !== answer    
+    while guess_left != 0 and guessed_word != answer:
+
+        print "I am thinking of a word that is %d letters long" %(len(answer))
+        print answer
+        print displayed_word
+        print "You have ", guess_left, " guesses left"
+        print "Letters you have guessed: ", guessed_letters
+    
+
+        letter_guess = input("Guess a letter   ")
+
+
+
+
+##        
 ##
 ##    
 ##    guess_left += -1
 ##    print guessed_letters
 ##    print guess_left
-
-
+##
+##
 ##if guess_left == 0:
 ##    print "Sorry but you really suck at this game and ran out of guesses. The word was " \
 ##    + answer
 
-    
+hangman()
 
 
 
